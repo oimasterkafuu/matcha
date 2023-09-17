@@ -12,7 +12,7 @@
         elseif($this->is('tag')){ ?>
             <h3 class="tag-page-title"><? $this->archiveTitle('%s', '', ''); ?></h3><?php
         }
-        else{ ?><h3 class="archive-title"><?
+        else{ ?><h3 class="archive-title"><?php
             $this->archiveTitle(array(
                 'category'  =>  _t('分类 %s 下的文章'),
                 'search'    =>  _t('包含关键字 %s 的文章'),
