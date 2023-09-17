@@ -10,7 +10,7 @@
 
         }
         elseif($this->is('tag')){ ?>
-            <h3 class="tag-page-title"><? $this->archiveTitle('%s', '', ''); ?></h3><?php
+            <h3 class="tag-page-title"><?php $this->archiveTitle('%s', '', ''); ?></h3><?php
         }
         else{ ?><h3 class="archive-title"><?php
             $this->archiveTitle(array(
