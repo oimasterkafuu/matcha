@@ -22,6 +22,7 @@ function themeConfig($form) {
         'kirin' => _t('秋麒麟'),
         'maple' => _t('枫树红'),
         'violet' => _t('紫罗兰'),
+        'oimaster' => _t('青空蓝'),
         'custom' => _t('自定义主题色')
     ),
     'matcha',

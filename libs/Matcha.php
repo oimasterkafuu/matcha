@@ -602,6 +602,9 @@ class Matcha
         elseif(Helper::options()->themeColor=='violet'){
             return '#6A5ACD';
         }
+        elseif(Helper::options()->themeColor=='oimaster'){
+            return '#8DB3F1';
+        }
         elseif(Helper::options()->themeColor=='custom'){
             return Helper::options()->themeColorCustom;
         }
