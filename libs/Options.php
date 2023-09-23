@@ -58,7 +58,9 @@ function themeConfig($form) {
 
     $icpNum = new Typecho_Widget_Helper_Form_Element_Text('icpNum', NULL, NULL, _t('网站备案号'), _t('在这里填入中国大陆的ICP网站备案号（无需带a标签，如 <code>浙ICP备19006255号-1</code> ），留空则不显示'));
     $form->addInput($icpNum);
-       $policeNum = new Typecho_Widget_Helper_Form_Element_Text('policeNum', NULL, NULL, _t('公安备案号'), _t('在这里填入中国大陆的公安网站备案号（无需带a标签，如 <code>京公网安备11010102002019号</code> ），留空则不显示'));
+    $moeIcpNum = new Typecho_Widget_Helper_Form_Element_Text('moeIcpNum', NULL, NULL, _t('网站萌备号'), _t('在这里填入萌国的ICP网站备案号（只需数字，如 <code>20233423</code> ），留空则不显示'));
+    $form->addInput($moeIcpNum);
+    $policeNum = new Typecho_Widget_Helper_Form_Element_Text('policeNum', NULL, NULL, _t('公安备案号'), _t('在这里填入中国大陆的公安网站备案号（无需带a标签，如 <code>京公网安备11010102002019号</code> ），留空则不显示'));
     $form->addInput($policeNum);
     $policeUrl = new Typecho_Widget_Helper_Form_Element_Text('policeUrl', NULL, NULL, _t('公安备案号链接地址'), _t('在这里填入中国大陆的公安网站备案号链接地址（无需带a标签，如 <code>http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010102002019</code> ），留空则不显示'));
     $form->addInput($policeUrl);

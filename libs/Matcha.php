@@ -399,6 +399,11 @@ class Matcha
             echo ' | ';
             echo '<a target="_blank" rel="nofollow" href="'.Helper::options()->policeUrl.'"><img src="/police.png" />'.Helper::options()->policeNum.'</a>';
         }
+        //萌备ICP号
+        if (Helper::options()->moeIcpNum!='') {
+            echo '<br />';
+            echo '<a rel="nofollow" href="https://icp.gov.moe/?keyword='.Helper::options()->moeIcpNum.'"> 萌ICP备'.Helper::options()->moeIcpNum.'号 </a>';
+        }
         //字数统计
         if (Helper::options()->EnableWordsCounter=='able') {
             echo '<br />';
