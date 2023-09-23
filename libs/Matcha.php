@@ -293,13 +293,15 @@ class Matcha
         if(Helper::options()->categoryNav=='able') {
             $archive->widget('Widget_Metas_Category_List')->to($categories);
             while($categories->next()) {
-                echo '<'.$tag.'><a href="';
-                $categories->permalink(); 
-                echo '" title="';
-                $categories->name(); 
-                echo '">';
-                $categories->name(); 
-                echo '</a></'.$tag.'>';
+                if(!$categories->parent) {
+                    echo '<'.$tag.'><a href="';
+                    $categories->permalink(); 
+                    echo '" title="';
+                    $categories->name(); 
+                    echo '">';
+                    $categories->name(); 
+                    echo '</a></'.$tag.'>';
+                }
             }
         }
     }
