@@ -493,7 +493,7 @@ class Matcha
         $db = Typecho_Db::get();
         $prefix = $db->getPrefix();
 
-        //若不存在 vies 项，则创建并返回 0
+        //若不存在 views 项，则创建并返回 0
         if (!array_key_exists('views', $db->fetchRow($db->select()->from('table.contents')))) {
             $db->query('ALTER TABLE `' . $prefix . 'contents` ADD `views` INT(10) DEFAULT 0;');
             return 0;
