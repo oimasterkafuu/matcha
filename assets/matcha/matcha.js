@@ -174,14 +174,20 @@ var tocbotLoad = function() {
  */
 //通用的缩放动画
 scaleIn = function(object, time) {
-    object.css('transform', 'scale(0)');
-    object.show();
-    object.css('transition', time).css('transform', 'scale(1)');
+    var currentScale = object.css('transform').match(/scale\(([^)]+)\)/)[1];
+    if (currentScale != 1) {
+        object.css('transform', 'scale(0)');
+        object.show();
+        object.css('transition', time).css('transform', 'scale(1)');
+    }
 }
 scaleOut = function(object, time) {
-    object.css('transition', time).css('transform', 'scale(0)');
-    object.hide();
+    var currentScale = object.css('transform').match(/scale\(([^)]+)\)/)[1];
+    if (currentScale != 0) {
+        object.css('transition', time).css('transform', 'scale(0)');
+    }
 }
+
 
 //details 标签，适配 BracketDown 插件
 var detailsAnimate = function() {
@@ -226,10 +232,10 @@ $('#back2top').hide();
 $("#back2top").on("click",function(){scrollSmoothTo(0)});
 
 var back2topShow = function(){
-    if ($(window).scrollTop() > 500) {
+    if ($(window).scrollTop() > 450) {
         scaleIn($('#back2top'), '0.7');
         $('#focus-mode-close').addClass('helpbar-up');
-    } else if ($(window).scrollTop() < 450) {
+    } else if ($(window).scrollTop() < 400) {
         scaleOut($('#back2top'), '0.7');
         $('#focus-mode-close').removeClass('helpbar-up');
     }
