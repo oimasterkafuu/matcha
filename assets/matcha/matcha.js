@@ -174,16 +174,16 @@ var tocbotLoad = function() {
  */
 //通用的缩放动画
 scaleIn = function(object, time) {
-    var currentScale = object.css('transform').match(/scale\(([^)]+)\)/)[1];
-    if (currentScale != 1) {
+    var currentScale = object.css('transform').match(/scale\(([^)]+)\)/);
+    if (!currentScale || currentScale[1] != 1) {
         object.css('transform', 'scale(0)');
         object.show();
         object.css('transition', time).css('transform', 'scale(1)');
     }
 }
 scaleOut = function(object, time) {
-    var currentScale = object.css('transform').match(/scale\(([^)]+)\)/)[1];
-    if (currentScale != 0) {
+    var currentScale = object.css('transform').match(/scale\(([^)]+)\)/);
+    if (!currentScale || currentScale[1] != 0) {
         object.css('transition', time).css('transform', 'scale(0)');
     }
 }
