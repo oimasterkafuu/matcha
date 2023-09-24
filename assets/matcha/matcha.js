@@ -174,12 +174,13 @@ var tocbotLoad = function() {
  */
 //通用的缩放动画
 scaleIn = function(object, time) {
-    object.css('transition', time).css('transform', 'scale(0)');
+    object.css('transform', 'scale(0)');
     object.show();
-    object.css('transform', 'scale(1)');
+    object.css('transition', time).css('transform', 'scale(1)');
 }
 scaleOut = function(object, time) {
-    object.css('transition', time).css('transform', 'scale(0)')
+    object.css('transition', time).css('transform', 'scale(0)');
+    object.hide();
 }
 
 //details 标签，适配 BracketDown 插件
@@ -225,10 +226,10 @@ $('#back2top').hide();
 $("#back2top").on("click",function(){scrollSmoothTo(0)});
 
 var back2topShow = function(){
-    if ($(window).scrollTop() > 450) {
+    if ($(window).scrollTop() > 500) {
         scaleIn($('#back2top'), '0.7');
         $('#focus-mode-close').addClass('helpbar-up');
-    } else {
+    } else if ($(window).scrollTop() < 450) {
         scaleOut($('#back2top'), '0.7');
         $('#focus-mode-close').removeClass('helpbar-up');
     }
