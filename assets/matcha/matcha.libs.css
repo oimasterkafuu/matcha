@@ -118,7 +118,7 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 	margin-top: .8em
 }
 .bracketdown-block::before {
-	content: 'NOTICE';
+	content: 'TIPS';
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	font-size: .7em;
 	color: #fff;
